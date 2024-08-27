@@ -99,10 +99,14 @@
 		height: 0.8rem !important;
 		width: 0.8rem !important;
 		border: 3px solid #fff;
-		background-color: #d1d5db;
+		background-color: #f87171;  // Light red shade
+		    &:hover {
+		        background-color: #ef4444; // Darker red on hover
+		    }
+		/* background-color: #d1d5db;
 		&:hover {
 			background-color: #9ca3af;
-		}
+		} */
 	}
 	input[type='range']::-moz-range-thumb {
 		height: 0.8rem !important;
