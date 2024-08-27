@@ -178,8 +178,119 @@
 		</div>
 	</div>
 </div>
-
 <style lang="scss">
+.attention {
+    &.expanded {
+        .title,
+        :global(.first-head-content) {
+            z-index: 900;
+        }
+        :global(.multi-head .rest.first) {
+            z-index: 810 !important;
+        }
+    }
+    .transformer-bounding {
+        border-radius: 10px 0 0 10px;
+        padding-left: 0.5rem;
+        left: -0.5rem;
+        border-right: none;
+    }
+    .bounding-title {
+        margin-left: 1rem;
+    }
+    .attention-bounding {
+        top: -0.5rem;
+        padding: 0.5rem 0;
+        left: -0.2rem;
+        width: calc(100% + 1rem);
+        height: calc(100%);
+    }
+    .column {
+        .label {
+            font-size: 0.7rem;
+            color: theme('colors.gray.600');
+        }
+        .title {
+            position: absolute;
+            top: -1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+        }
+        &.query .title {
+            color: theme('colors.red.400'); // Consistent with queryHeadVectorColor
+        }
+        &.key .title {
+            color: theme('colors.orange.400'); // Consistent with keyHeadVectorColor
+        }
+        &.value .title {
+            color: theme('colors.green.400'); // Consistent with valHeadVectorColor
+        }
+        &.out .title {
+            color: theme('colors.red.900'); // Consistent with outputVectorColor
+        }
+    }
+    .content {
+        display: grid;
+        grid-template-columns: 0 auto 0;
+
+        .tokens {
+            gap: 0.6rem;
+        }
+    }
+    .heads {
+        padding: 0 6rem 0 7rem;
+
+        .head1.cell {
+            .label {
+                height: auto;
+                line-height: 1;
+            }
+            &.active {
+                &.query {
+                    .label {
+                        background-color: theme('colors.red.100'); // Lighter shade for active state
+                        color: theme('colors.red.700'); // Darker shade for text
+                    }
+                }
+                &.key {
+                    .label {
+                        background-color: theme('colors.orange.100'); // Lighter shade for active state
+                        color: theme('colors.orange.700'); // Darker shade for text
+                    }
+                }
+                &.value {
+                    .label {
+                        background-color: theme('colors.green.100'); // Lighter shade for active state
+                        color: theme('colors.green.700'); // Darker shade for text
+                    }
+                }
+            }
+        }
+    }
+
+    .sub-vector {
+        user-select: none;
+        font-size: 0.8rem;
+        &.query {
+            color: theme('colors.red.300'); // Consistent with queryVectorColor
+        }
+        &.key {
+            color: theme('colors.orange.300'); // Consistent with keyVectorColor
+        }
+        &.value {
+            color: theme('colors.green.300'); // Consistent with valVectorColor
+        }
+
+        .head-rest {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+</style>
+<!-- <style lang="scss">
 	.attention {
 		&.expanded {
 			.title,
@@ -285,4 +396,4 @@
 			}
 		}
 	}
-</style>
+</style> -->
