@@ -18,7 +18,7 @@
 
 	const lineHeight = 1;
 
-	const colorKey = typeof colorScale === 'string' ? colorScale : 'gray';
+	const colorKey = typeof colorScale === 'string' ? colorScale : 'red';
 	const color =
 		typeof colorScale === 'function'
 			? colorScale
