@@ -37,10 +37,13 @@
 	import { GPT2Tokenizer } from '@xenova/transformers';
 	import fs from 'fs';
 
-	async function loadLocalTokenizer(jsonPath) {
-	    const tokenizerData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
-	    const tokenizer = new GPT2Tokenizer(tokenizerData);
-	    return tokenizer;
+	// Function to load the tokenizer.json file
+	async function loadTokenizerJson(url) {
+	    const response = await fetch(url);
+	    if (!response.ok) {
+	        throw new Error(`Failed to load ${url}: ${response.statusText}`);
+	    }
+	    return response.json();
 	}
 
 	// run model
