@@ -95,7 +95,7 @@
 						<strong>MLP (Multilayer Perceptron) Layer</strong>, ein Feed-Forward-Netzwerk, 
 						das unabhängig auf jedes Token angewendet wird. Während das Ziel der Aufmerksamkeitsmechanismus-Schicht 
 						darin besteht, Informationen zwischen Tokens weiterzuleiten, 
-						zielt der MLP darauf ab, die Darstellung jedes Tokens zu verfeinern.
+						zielt der MLP darauf ab, die Repräsentation jedes Tokens zu verfeinern.
 
 					</li>
 				</ul>
@@ -114,7 +114,7 @@
 				Angenommen, Sie möchten Text mit einem Transformer-Modell generieren. Sie geben die Aufforderung wie diese ein: 
 				<code>“Data visualization empowers users to”</code>. Diese Eingabe muss in ein Format umgewandelt werden, 
 				das das Modell verstehen und verarbeiten kann. Hier kommt die Einbettung / Embedding ins Spiel: 
-				Sie verwandelt den Text in eine numerische Darstellung, mit der das Modell arbeiten kann. 
+				Sie verwandelt den Text in eine numerische Repräsentation, mit der das Modell arbeiten kann. 
 				Um eine Eingabeaufforderung in eine Einbettung umzuwandeln, müssen wir 1) den Eingabetext tokenisieren, 
 				2) Token-Einbettungen erhalten, 3) Positionsinformationen hinzufügen und schließlich 
 				4) Token- und Positionscodierungen zusammenfügen, um die endgültige Einbettung zu erhalten. 
@@ -126,7 +126,7 @@
 			</div>
 			<div class="figure-caption">
 				Abbildung <span class="attention">1</span>. Erweiterung der Ansicht der Einbettungsschicht / des Embedding Layer, 
-				die zeigt, wie die Eingabeaufforderung in eine Vektordarstellung umgewandelt wird. Der Prozess umfasst 
+				die zeigt, wie die Eingabeaufforderung in eine Vektorrepräsentation umgewandelt wird. Der Prozess umfasst 
 				<span class="fig-numbering">(1)</span> Tokenisierung / Tokenization, (2) Token-Einbettung / Token Embedding, 
 				(3) Positionscodierung / Positional Encoding und (4) Finale Einbettung / Finale Embedding 
 
@@ -140,7 +140,7 @@
 					während das Wort <code>"empowers"</code> in zwei Tokens aufgeteilt wird. Das vollständige Vokabular der 
 					Tokens wird vor dem Training des Modells festgelegt: Das Vokabular von GPT-2 umfasst <code>50.257</code> 
 					eindeutige Tokens. Jetzt, da wir unseren Eingabetext in Tokens mit eindeutigen IDs aufgeteilt haben, 
-					können wir ihre Vektordarstellung aus den Einbettungen erhalten.
+					können wir ihre Vektorrepräsentation aus den Einbettungen erhalten.
 				</p>
 			</div>
 			<div class="article-subsection" id="article-token-embedding">
@@ -169,7 +169,7 @@
               sowohl die absolute als auch die relative Position jedes Tokens widerzuspiegeln.
             </p>
             <p>
-              	Jede Position in einer Sequenz wird durch eine einzigartige mathematische Darstellung 
+              	Jede Position in einer Sequenz wird durch eine einzigartige mathematische Repräsentation 
 		unter Verwendung einer Kombination aus Sinus- und Kosinusfunktionen zugewiesen.
 
               	Für eine gegebene Position repräsentiert die Sinusfunktion die geraden Dimensionen,
@@ -204,8 +204,8 @@
 			<div class="article-subsection">
 				<h3>Schritt 4. Finale Einbettung / Final Embedding </h3>
 				<p>
-					Abschließend summieren wir die Token- und Positionskodierungen, um die endgültige Einbettungsdarstellung zu erhalten. 
-					Diese kombinierte Darstellung erfasst sowohl die semantische Bedeutung 
+					Abschließend summieren wir die Token- und Positionskodierungen, um die finale Repräsentation der Einbettung / finale embedding zu erhalten. 
+					Diese kombinierte Repräsentation erfasst sowohl die semantische Bedeutung 
 					der Tokens als auch ihre Position in der Eingabesequenz.
 				</p>
 			</div>
@@ -217,7 +217,7 @@
 			<p>	Der Kern der Verarbeitung im Transformer liegt im Transformer-Block, 
 				der aus einer Multi-Head-Selbstaufmerksamkeit (multi-head self-attention) und einer Multi-Layer-Perceptron-Schicht besteht. 
 				Die meisten Modelle bestehen aus mehreren solcher Blöcke, die nacheinander sequenziell gestapelt sind. 
-				Die Token-Darstellungen entwickeln sich durch die Schichten, vom ersten Block bis zum zwölften, 
+				Die Token-Repräsentationen entwickeln sich durch die Schichten, vom ersten Block bis zum zwölften, 
 				was dem Modell ermöglicht, ein komplexes Verständnis für jedes Token aufzubauen. 
 				Dieser geschichtete Ansatz führt zu höherwertigen Repräsentationen der Eingabe.
 			</p>
@@ -231,7 +231,7 @@
 					für Schritt berechnet wird.
 				</p>
 				<div class="article-subsection-l2">
-					<h4>Step 1: Query, Key, und Value Matrizen</h4>
+					<h4>Schritt 1: Query, Key, und Value Matrizen</h4>
 
 					<div class="figure">
 						<img src="./article_assets/QKV.png" width="80%" align="middle" />
@@ -275,74 +275,75 @@
 					</p>
 				</div>
 				<div class="article-subsection-l2">
-					<h4>Step 2: Masked Self-Attention</h4>
+					<h4>Schritt 2: Maskierte Selbstaufmerksamkeit / Masked Self-Attention</h4>
 					<p>
-						Masked self-attention allows the model to generate sequences by focusing on relevant
-						parts of the input while preventing access to future tokens.
-					</p>
+						Die maskierte Selbstaufmerksamkeit / Masked self-attention ermöglicht es dem Modell, Sequenzen zu generieren, 
+						indem es sich auf relevante Teile der Eingabe konzentriert und gleichzeitig den Zugriff auf zukünftige Tokens
+						verhindert. </p>
 
 					<div class="figure">
 						<img src="./article_assets/attention.png" width="80%" align="middle" />
 					</div>
 					<div class="figure-caption">
-						Figure <span class="attention">3</span>. Using Query, Key, and Value matrices to
-						calculate masked self-attention.
+						Abbildung <span class="attention">3</span>. Verwendung von Query-, Key- und Value-Matrizen zur Berechnung 
+						der maskierten Selbstaufmerksamkeit / Masked Self-Attention.
 					</div>
 
 					<ul>
 						<li>
-							<strong>Attention Score</strong>: The dot product of
+							<strong>Aufmerksamkeitswert / Attention Score</strong>: Das Skalarprodukt der (dot product) der
 							<span class="q-color">Query</span>
-							and <span class="k-color">Key</span> matrices determines the alignment of each query with
-							each key, producing a square matrix that reflects the relationship between all input tokens.
+							und <span class="k-color">Key</span> -Matrizen bestimmt die Ausrichtung jeder Query mit jedem Key und erzeugt 
+							eine quadratische Matrix, die die Beziehung zwischen allen Eingabetokens widerspiegelt.
 						</li>
 						<li>
-							<strong>Masking</strong>: A mask is applied to the upper triangle of the attention
-							matrix to prevent the model from accessing future tokens, setting these values to
-							negative infinity. The model needs to learn how to predict the next token without
-							“peeking” into the future.
+							<strong>Maskierung</strong>: Eine Maske wird auf das obere Dreieck der Aufmerksamkeitsmatrix angewendet, 
+							um zu verhindern, dass das Modell auf zukünftige Tokens zugreift, indem diese Werte auf 
+							„negative Unendlichkeit" gesetzt werden. Das Modell muss lernen, den nächsten Token vorherzusagen, ohne in die Zukunft „zu schauen".
 						</li>
 						<li>
-							<strong>Softmax</strong>: After masking, the attention score is converted into
-							probability by the softmax operation which takes the exponent of each attention score.
-							Each row of the matrix sums up to one and indicates the relevance of every other token
-							to the left of it.
+							<strong>Softmax</strong>: Nach der Maskierung wird der Aufmerksamkeitswert durch die Softmax-Operation 
+							in eine Wahrscheinlichkeit umgewandelt, bei der das Exponential jeder Aufmerksamkeitsbewertung (attention score) genommen wird. 
+							Jede Zeile der Matrix summiert sich zu eins und zeigt die Relevanz jedes anderen Tokens links davon an.
+			
 						</li>
 					</ul>
 				</div>
 				<div class="article-subsection-l2">
-					<h4>Step 3: Output</h4>
+					<h4>Schritt 3: Ausgabe / Output</h4>
 					<p>
-						The model uses the masked self-attention scores and multiplies them with the
-						<span class="v-color">Value</span> matrix to get the
-						<span class="purple-color">final output</span>
-						of the self-attention mechanism. GPT-2 has <code>12</code> self-attention heads, each capturing
-						different relationships between tokens. The outputs of these heads are concatenated and passed
-						through a linear projection.
-					</p>
+						Das Modell verwendet die maskierten Selbstaufmerksamkeitswerte / masked self-attention und multipliziert sie mit 
+						der <span class="v-color">Value</span>-Matrix, um die <span class="purple-color">fianle Ausgabe</span> 
+						des Selbstaufmerksamkeitsmechanismus zu erhalten. GPT-2 verfügt über <code>12</code> Selbstaufmerksamkeitsköpfe / self-attention heads, 
+						die jeweils unterschiedliche Beziehungen zwischen den Tokens erfassen. Die Ausgaben dieser Köpfe werden 
+						zusammengeführt und durch eine lineare Projektion weiterverarbeitet.
+
+					</p>F
 				</div>
 
 				<div class="article-subsection" id="article-activation">
-					<h3>MLP: Multi-Layer Perceptron</h3>
+					<h3>MLP: Multi-Layer Perceptron (Mehrschichtiger Perzeptron) </h3>
 
 					<div class="figure">
 						<img src="./article_assets/mlp.png" width="70%" align="middle" />
 					</div>
 					<div class="figure-caption">
-						Figure <span class="attention">4</span>. Using MLP layer to project the self-attention
-						representations into higher dimensions to enhance the model's representational capacity.
+						Abbildung  <span class="attention">4</span>. Verwendung der MLP-Schicht, um die Repräsentation der Selbstaufmerksamkeit 
+						in höhere Dimensionen zu projizieren und so die Repräsentationskapazität des Modells zu erhöhen.
 					</div>
 
-					<p>
-						After the multiple heads of self-attention capture the diverse relationships between the
-						input tokens, the concatenated outputs are passed through the Multilayer Perceptron
-						(MLP) layer to enhance the model's representational capacity. The MLP block consists of
-						two linear transformations with a GELU activation function in between. The first linear
-						transformation increases the dimensionality of the input four-fold from <code>768</code>
-						to <code>3072</code>. The second linear transformation reduces the dimensionality back
-						to the original size of <code>768</code>, ensuring that the subsequent layers receive
-						inputs of consistent dimensions. Unlike the self-attention mechanism, the MLP processes
-						tokens independently and simply map them from one representation to another.
+					<p>	
+						Nachdem die verschiedenen Köpfe der Selbstaufmerksamkeit / self-attention die vielfältigen Beziehungen zwischen 
+						den Eingabetokens erfasst haben, werden die zusammengeführten Ausgaben durch die Multi-Layer Perceptron-(MLP)-Schicht 
+						geleitet, um die Repräsentationskapazität des Modells zu erhöhen. Der MLP-Block besteht aus zwei linearen 
+						Transformationen mit einer GELU-Aktivierungsfunktion dazwischen. Die erste lineare Transformation erhöht 
+						die Dimensionalität der Eingabe um das Vierfache von <code>768</code> auf <code>3072</code>. Die zweite lineare 
+						Transformation reduziert die Dimensionalität wieder auf die ursprüngliche Größe von <code>768</code>, 
+						wodurch sichergestellt wird, dass die nachfolgenden Schichten Eingaben mit konsistenter Dimensionalität erhalten. 
+						Im Gegensatz zum Selbstaufmerksamkeitsmechanismus / self-attention mechanism verarbeitet der MLP Tokens unabhängig voneinander und mappt sie 
+						einfach von einer Repräsentation zur nächsten.
+
+						
 					</p>
 				</div>
 
