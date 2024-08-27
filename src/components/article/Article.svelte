@@ -15,195 +15,198 @@
 
 <div id="description">
 	<div class="article-section">
-		<h1>What is a Transformer?</h1>
+		<h1>Was ist ein Transformer?</h1>
 
 		<p>
-			Transformer is a neural network architecture that has fundamentally changed the approach to
-			Artificial Intelligence. Transformer was first introduced in the seminal paper
+			Der Transformer ist eine neuronale Netzwerkarchitektur, die die Herangehensweise an Künstliche Intelligenz grundlegend verändert hat. 
+			Der Transformer wurde erstmals in der bahnbrechenden Arbeit
 			<a
 				href="https://dl.acm.org/doi/10.5555/3295222.3295349"
 				title="ACM Digital Library"
 				target="_blank">"Attention is All You Need"</a
 			>
-			in 2017 and has since become the go-to architecture for deep learning models, powering text-generative
-			models like OpenAI's <strong>GPT</strong>, Meta's <strong>Llama</strong>, and Google's
-			<strong>Gemini</strong>. Beyond text, Transformer is also applied in
+			im Jahr 2017 vorgestellt und hat sich seitdem zur bevorzugten Architektur für Deep Learning-Modelle entwickelt.
+			Er treibt textgenerative Modelle wie OpenAIs <strong>GPT</strong>, Metas <strong>Llama</strong> 
+			und Googles <strong>Gemini</strong> an. Über den Text hinaus wird der Transformer auch in der
 			<a
 				href="https://huggingface.co/learn/audio-course/en/chapter3/introduction"
 				title="Hugging Face"
-				target="_blank">audio generation</a
+				target="_blank">Audioerzeugung</a
 			>,
 			<a
 				href="https://huggingface.co/learn/computer-vision-course/unit3/vision-transformers/vision-transformers-for-image-classification"
 				title="Hugging Face"
-				target="_blank">image recognition</a
+				target="_blank">Bilderkennung</a
 			>,
 			<a href="https://elifesciences.org/articles/82819" title="eLife"
-				>protein structure prediction</a
-			>, and even
+				>Proteinstrukturvorhersage</a
+			> und sogar beim
 			<a
 				href="https://www.deeplearning.ai/the-batch/reinforcement-learning-plus-transformers-equals-efficiency/"
 				title="Deep Learning AI"
-				target="_blank">game playing</a
-			>, demonstrating its versatility across numerous domains.
+				target="_blank">Spielen von Spielen</a
+			> eingesetzt, was seine Vielseitigkeit in verschiedenen Bereichen demonstriert. 
 		</p>
 		<p>
-			Fundamentally, text-generative Transformer models operate on the principle of <strong
-				>next-word prediction</strong
-			>: given a text prompt from the user, what is the <em>most probable next word</em> that will follow
-			this input? The core innovation and power of Transformers lie in their use of self-attention mechanism,
-			which allows them to process entire sequences and capture long-range dependencies more effectively
-			than previous architectures.
+			Im Wesentlichen basieren textgenerative Transformer-Modelle auf dem Prinzip
+			der <strong>Wortvorhersage</strong>: Bei einer Texteingabe durch den Benutzer, 
+			welches ist das <em>wahrscheinlichste nächste Wort</em>, das auf diese Eingabe folgt? 
+			Die Kerninnovation und Stärke der Transformer liegt in ihrem Einsatz des Self-Attention-Mechanismus, 
+			der es ihnen ermöglicht, ganze Sequenzen zu verarbeiten und 
+			langfristige Abhängigkeiten (context) effektiver zu erfassen als bisherige Architekturen. 
 		</p>
 		<p>
-			GPT-2 family of models are prominent examples of text-generative Transformers. Transformer
-			Explainer is powered by the
+			Die GPT-2-Familie von Modellen sind prominente Beispiele für textgenerative Transformer. 
+			Der Transformer Explainer wird durch 
 			<a href="https://huggingface.co/openai-community/gpt2" title="Hugging Face" target="_blank"
 				>GPT-2</a
 			>
-			(small) model which has 124 million parameters. While it is not the latest or most powerful Transformer
-			model, it shares many of the same architectural components and principles found in the current
-			state-of-the-art models making it an ideal starting point for understanding the basics.
+			(small) betrieben, ein "kleines" Modell, das 124 Millionen Parameter umfasst. 
+			Obwohl es nicht das neueste oder leistungsfähigste Transformer-Modell ist, 
+			teilt es viele der gleichen architektonischen Komponenten und Prinzipien, 
+			die in den aktuellen Spitzenmodellen zu finden sind, was es zu einem idealen Ausgangspunkt 
+			für das Verständnis der Grundlagen macht.
 		</p>
 	</div>
 
 	<div class="article-section">
-		<h1>Transformer Architecture</h1>
+		<h1>Die Transformer-Architektur</h1>
 
 		<p>
-			Every text-generative Transformer consists of these <strong>three key components</strong>:
+			Jeder textgenerative Transformer besteht aus diesen <strong>drei Hauptkomponenten</strong>:
+
 		</p>
 		<ol>
 			<li>
-				<strong class="bold-purple">Embedding</strong>: Text input is divided into smaller units
-				called tokens, which can be words or subwords. These tokens are converted into numerical
-				vectors called embeddings, which capture the semantic meaning of words.
+				<strong class="bold-purple">Einbettung / Embedding</strong>: Die texteingabe wird in kleinere Einheiten aufgeteilt, 
+				die als Tokens bezeichnet werden und Wörter oder Teilwörter sein können. Diese Tokens werden in numerische 
+				Vektoren umgewandelt, die als Einbettungen bezeichnet werden und die semantische Bedeutung von Wörtern erfassen.
 			</li>
 			<li>
-				<strong class="bold-purple">Transformer Block</strong> is the fundamental building block of
-				the model that processes and transforms the input data. Each block includes:
+				<strong class="bold-purple">Transformer Block</strong> ist der grundlegende Baustein des Modells, 
+				der die Eingabedaten verarbeitet und transformiert. Jeder Block umfasst:
 				<ul class="">
 					<li>
-						<strong>Attention Mechanism</strong>, the core component of the Transformer block. It
-						allows tokens to communicate with other tokens, capturing contextual information and
-						relationships between words.
+						<strong>Aufmerksamkeitsmechanismus / Attention Mechanism</strong>, das Kernstück des Transformer-Blocks. 
+						Er ermöglicht es Tokens, miteinander zu kommunizieren und kontextuelle Informationen 
+						sowie Beziehungen zwischen Wörtern zu erfassen.
 					</li>
 					<li>
-						<strong>MLP (Multilayer Perceptron) Layer</strong>, a feed-forward network that operates
-						on each token independently. While the goal of the attention layer is to route
-						information between tokens, the goal of the MLP is to refine each token's
-						representation.
+						<strong>MLP (Multilayer Perceptron) Layer</strong>, ein Feed-Forward-Netzwerk, 
+						das unabhängig auf jedes Token angewendet wird. Während das Ziel der Aufmerksamkeitsmechanismus-Schicht 
+						darin besteht, Informationen zwischen Tokens weiterzuleiten, 
+						zielt der MLP darauf ab, die Darstellung jedes Tokens zu verfeinern.
+
 					</li>
 				</ul>
 			</li>
 			<li>
-				<strong class="bold-purple">Output Probabilities</strong>: The final linear and softmax
-				layers transform the processed embeddings into probabilities, enabling the model to make
-				predictions about the next token in a sequence.
+				<strong class="bold-purple">Ausgabe-Wahrscheinlichkeiten</strong>: Die finalen linearen und Softmax-Schichten transformieren 
+				die verarbeiteten Einbettungen in Wahrscheinlichkeiten, wodurch das Modell Vorhersagen über das 
+				nächste Token in einer Sequenz treffen kann.
+
 			</li>
 		</ol>
 
 		<div class="architecture-section" id="embedding">
-			<h2>Embedding</h2>
+			<h2>Einbettung / Embedding</h2>
 			<p>
-				Let's say you want to generate text using a Transformer model. You add the prompt like this
-				one: <code>“Data visualization empowers users to”</code>. This input needs to be converted
-				into a format that the model can understand and process. That is where embedding comes in:
-				it transforms the text into a numerical representation that the model can work with. To
-				convert a prompt into embedding, we need to 1) tokenize the input, 2) obtain token
-				embeddings, 3) add positional information, and finally 4) add up token and position
-				encodings to get the final embedding. Let’s see how each of these steps is done.
+				Angenommen, Sie möchten Text mit einem Transformer-Modell generieren. Sie geben die Aufforderung wie diese ein: 
+				<code>“Data visualization empowers users to”</code>. Diese Eingabe muss in ein Format umgewandelt werden, 
+				das das Modell verstehen und verarbeiten kann. Hier kommt die Einbettung / Embedding ins Spiel: 
+				Sie verwandelt den Text in eine numerische Darstellung, mit der das Modell arbeiten kann. 
+				Um eine Eingabeaufforderung in eine Einbettung umzuwandeln, müssen wir 1) den Eingabetext tokenisieren, 
+				2) Token-Einbettungen erhalten, 3) Positionsinformationen hinzufügen und schließlich 
+				4) Token- und Positionscodierungen zusammenfügen, um die endgültige Einbettung zu erhalten. 
+				Lassen Sie uns betrachten, wie jeder dieser Schritte durchgeführt wird.
+
 			</p>
 			<div class="figure">
 				<img src="./article_assets/embedding.png" width="60%" height="60%" align="middle" />
 			</div>
 			<div class="figure-caption">
-				Figure <span class="attention">1</span>. Expanding the Embedding layer view, showing how the
-				input prompt is converted to a vector representation. The process involves
-				<span class="fig-numbering">(1)</span> Tokenization, (2) Token Embedding, (3) Positional Encoding,
-				and (4) Final Embedding.
+				Abbildung <span class="attention">1</span>. Erweiterung der Ansicht der Einbettungsschicht / des Embedding Layer, 
+				die zeigt, wie die Eingabeaufforderung in eine Vektordarstellung umgewandelt wird. Der Prozess umfasst 
+				<span class="fig-numbering">(1)</span> Tokenisierung / Tokenization, (2) Token-Einbettung / Token Embedding, 
+				(3) Positionscodierung / Positional Encoding und (4) Finale Einbettung / Finale Embedding 
+
 			</div>
 			<div class="article-subsection">
-				<h3>Step 1: Tokenization</h3>
+				<h3>Schritt 1: Tokenisierung / Tokenization</h3>
 				<p>
-					Tokenization is the process of breaking down the input text into smaller, more manageable
-					pieces called tokens. These tokens can be a word or a subword. The words <code
-						>"Data"</code
-					>
-					and <code>"visualization"</code> correspond to unique tokens, while the word
-					<code>"empowers"</code>
-					is split into two tokens. The full vocabulary of tokens is decided before training the model:
-					GPT-2's vocabulary has <code>50,257</code> unique tokens. Now that we split our input text
-					into tokens with distinct IDs, we can obtain their vector representation from embeddings.
+					Die Tokenisierung ist der Prozess des Zerlegens des Eingabetexts in kleinere, handlichere Stücke, 
+					die als Tokens bezeichnet werden. Diese Tokens können ein Wort oder ein Teilwort sein. 
+					Die Wörter <code>"Data"</code> und <code>"visualization"</code> entsprechen eindeutigen Tokens, 
+					während das Wort <code>"empowers"</code> in zwei Tokens aufgeteilt wird. Das vollständige Vokabular der 
+					Tokens wird vor dem Training des Modells festgelegt: Das Vokabular von GPT-2 umfasst <code>50.257</code> 
+					eindeutige Tokens. Jetzt, da wir unseren Eingabetext in Tokens mit eindeutigen IDs aufgeteilt haben, 
+					können wir ihre Vektordarstellung aus den Einbettungen erhalten.
 				</p>
 			</div>
 			<div class="article-subsection" id="article-token-embedding">
-				<h3>Step 2. Token Embedding</h3>
+				<h3>Schritt 2: Token-Einbettung</h3>
 				<p>
-					GPT-2 Small represents each token in the vocabulary as a 768-dimensional vector; the
-					dimension of the vector depends on the model. These embedding vectors are stored in a
-					matrix of shape <code>(50,257, 768)</code>, containing approximately 39 million
-					parameters! This extensive matrix allows the model to assign semantic meaning to each
-					token.
+				 GPT-2 Small stellt jedes Token im Vokabular als einen 768-dimensionalen Vektor dar; 
+				die Dimension des Vektors hängt vom Modell ab. Diese Einbettungsvektoren werden in einer Matrix 
+    				mit der Form <code>(50.257, 768)</code> gespeichert, die etwa 39 Millionen Parameter enthält! 
+				Diese umfangreiche Matrix ermöglicht es dem Modell, jedem Token eine semantische Bedeutung zuzuweisen.
 				</p>
 			</div>
 			<div class="article-subsection" id="article-positional-embedding">
-				<h3>Step 3. Positional Encoding</h3>
+				<h3>Schritt 3: Positionscodierung / Positional Encoding</h3>
 				<p>
-					The Embedding layer also encodes information about each token's position in the input
-					prompt. Different models use various methods for positional encoding. GPT-2 trains its own
-					positional encoding matrix from scratch, integrating it directly into the training
-					process.
+				Die Einbettungsschicht / Embedding Layer kodiert auch Informationen über die Position jedes Tokens der Text Inputs.
+				Verschiedene Modelle verwenden unterschiedliche Methoden zur Positionscodierung. GPT-2 trainiert seine eigene Positionscodierungsmatrix
+				von Grund auf und integriert sie direkt in den Trainingsprozess.
 				</p>
 
 				<!-- <div class="article-subsection-l2">
-            <h4>Alternative Positional Encoding Approach <strong class='attention'>[POTENTIALLY COLLAPSIBLE]</strong></h4>
+            <h4>Alternative Positionskodierungsansatz / Alternative Positional <strong class='attention'>[POTENZIELL ZUSAMMENKLAPPBAR]</strong></h4>
             <p>
-              Other models, like the original Transformer and BERT,
-              use sinusoidal functions for positional encoding.
+              Andere Modelle, wie der originale Transformer und BERT, verwenden sinusförmige Funktionen für die Positionskodierung.
 
-              This sinusoidal encoding is deterministic and designed to reflect
-              the absolute as well as the relative position of each token.
+              Diese sinusförmige Kodierung ist deterministisch und darauf ausgelegt,
+              sowohl die absolute als auch die relative Position jedes Tokens widerzuspiegeln.
             </p>
             <p>
-              Each position in a sequence is assigned a unique mathematical
-              representation using a combination of sine and cosine functions.
+              	Jede Position in einer Sequenz wird durch eine einzigartige mathematische Darstellung 
+		unter Verwendung einer Kombination aus Sinus- und Kosinusfunktionen zugewiesen.
 
-              For a given position, the sine function represents even dimensions,
-              and the cosine function represents odd dimensions within the positional encoding vector.
+              	Für eine gegebene Position repräsentiert die Sinusfunktion die geraden Dimensionen,
+          	und die Kosinusfunktion repräsentiert die ungeraden Dimensionen innerhalb des Positionskodierungsvektors.
 
-              This periodic nature ensures that each position has a consistent encoding,
-              independent of the surrounding context.
+          	Diese periodische Natur stellt sicher, dass jede Position eine konsistente Kodierung erhält,
+          	unabhängig vom umgebenden Kontext.
             </p>
 
             <p>
-              Here’s how it works:
+             So funktioniert es:
             </p>
 
             <span class='attention'>
-              SINUSOIDAL POSITIONAL ENCODING EQUATION
-            </span>
+          SINUSFÖRMIGE POSITIONSKODIERUNGSGLEICHUNG
+        </span>
 
-            <ul>
-              <li>
-                <strong>Sine Function</strong>: Used for even indices of the embedding vector.
-              </li>
-              <li>
-                <strong>Cosine Function</strong>: Used for odd indices of the embedding vector.
-            </ul>
+        <ul>
+          <li>
+            <strong>Sinusfunktion</strong>: Wird für gerade Indizes des Einbettungsvektors verwendet.
+          </li>
+          <li>
+            <strong>Kosinusfunktion</strong>: Wird für ungerade Indizes des Einbettungsvektors verwendet.
+        </ul>
 
-            <p>
-              Hover over individual encoding values in the matrix above to
-              see how it's calculated using the sins and cosine functions.
-            </p>
+        <p>
+          Fahren Sie mit der Maus über einzelne Kodierungswerte in der obigen Matrix,
+          um zu sehen, wie diese mit den Sinus- und Kosinusfunktionen berechnet werden.
+        </p>
           </div> -->
 			</div>
 			<div class="article-subsection">
-				<h3>Step 4. Final Embedding</h3>
+				<h3>Schritt 4. Finale Einbettung / Final Embedding </h3>
 				<p>
-					Finally, we sum the token and positional encodings to get the final embedding
-					representation. This combined representation captures both the semantic meaning of the
-					tokens and their position in the input sequence.
+					Abschließend summieren wir die Token- und Positionskodierungen, um die endgültige Einbettungsdarstellung zu erhalten. 
+					Diese kombinierte Darstellung erfasst sowohl die semantische Bedeutung 
+					der Tokens als auch ihre Position in der Eingabesequenz.
 				</p>
 			</div>
 		</div>
@@ -211,63 +214,64 @@
 		<div class="architecture-section">
 			<h2>Transformer Block</h2>
 
-			<p>
-				The core of the Transformer's processing lies in the Transformer block, which comprises
-				multi-head self-attention and a Multi-Layer Perceptron layer. Most models consist of
-				multiple such blocks that are stacked sequentially one after the other. The token
-				representations evolve through layers, from the first block to the 12th one, allowing the
-				model to build up an intricate understanding of each token. This layered approach leads to
-				higher-order representations of the input.
+			<p>	Der Kern der Verarbeitung im Transformer liegt im Transformer-Block, 
+				der aus einer Multi-Head-Selbstaufmerksamkeit (multi-head self-attention) und einer Multi-Layer-Perceptron-Schicht besteht. 
+				Die meisten Modelle bestehen aus mehreren solcher Blöcke, die nacheinander sequenziell gestapelt sind. 
+				Die Token-Darstellungen entwickeln sich durch die Schichten, vom ersten Block bis zum zwölften, 
+				was dem Modell ermöglicht, ein komplexes Verständnis für jedes Token aufzubauen. 
+				Dieser geschichtete Ansatz führt zu höherwertigen Repräsentationen der Eingabe.
 			</p>
 
 			<div class="article-subsection" id="self-attention">
-				<h3>Multi-Head Self-Attention</h3>
-				<p>
-					The self-attention mechanism enables the model to focus on relevant parts of the input
-					sequence, allowing it to capture complex relationships and dependencies within the data.
-					Let’s look at how this self-attention is computed step-by-step.
+				<h3>Multi-Head Selbstaufmerksamkeit / Multi-Head Self-Attention</h3>
+				<p>	
+					Der Selbstaufmerksamkeitsmechanismus /  self-attention mechanism  ermöglicht es dem Modell, 
+					sich auf relevante Teile der Eingabesequenz zu konzentrieren und so komplexe Beziehungen und Abhängigkeiten 
+					innerhalb der Daten zu erfassen. Schauen wir uns an, wie diese Selbstaufmerksamkeit / self attention Schritt 
+					für Schritt berechnet wird.
 				</p>
 				<div class="article-subsection-l2">
-					<h4>Step 1: Query, Key, and Value Matrices</h4>
+					<h4>Step 1: Query, Key, und Value Matrizen</h4>
 
 					<div class="figure">
 						<img src="./article_assets/QKV.png" width="80%" align="middle" />
 					</div>
 					<div class="figure-caption">
-						Figure <span class="attention">2</span>. Computing Query, Key, and Value matrices from
-						the original embedding.
+						Abbildung <span class="attention">2</span>.Berechnung der Query-, Key- und Value-Matrizen 
+						aus der ursprünglichen Einbettung.
 					</div>
 
 					<p>
 						Each token's embedding vector is transformed into three vectors:
 						<span class="q-color">Query (Q)</span>,
-						<span class="k-color">Key (K)</span>, and
-						<span class="v-color">Value (V)</span>. These vectors are derived by multiplying the
-						input embedding matrix with learned weight matrices for
+						<span class="k-color">Key (K)</span>, und
+						<span class="v-color">Value (V)</span>. Diese Vektoren werden abgeleitet, 
+						indem die Eingabe-Einbettungsmatrix mit gelernten Gewichtsmatrizen für
 						<span class="q-color">Q</span>,
-						<span class="k-color">K</span>, and
-						<span class="v-color">V</span>. Here's a web search analogy to help us build some
-						intuition behind these matrices:
+						<span class="k-color">K</span>, und
+						<span class="v-color">V</span> multipliziert wird. Hier ist eine Analogie zur Websuche, 
+						um ein intuitives Verständnis für diese Matrizen zu entwickeln:
+				</p>
 					</p>
 					<ul>
 						<li>
-							<strong class="q-color font-medium">Query (Q)</strong> is the search text you type in
-							the search engine bar. This is the token you want to
-							<em>"find more information about"</em>.
+							<strong class="q-color font-medium">Query (Q)</strong> ist der Suchtext, 
+							den Sie in die Suchleiste einer Suchmaschine eingeben. Dies ist das Token, 
+							über das Sie <em>"mehr Informationen finden möchten"</em>.
 						</li>
 						<li>
-							<strong class="k-color font-medium">Key (K)</strong> is the title of each web page in the
-							search result window. It represents the possible tokens the query can attend to.
+							<strong class="k-color font-medium">Key (K)</strong> ist der Titel jeder Webseite 
+							im Suchergebnisfenster. Er repräsentiert die möglichen Tokens, auf die sich die Query konzentrieren kann.
 						</li>
 						<li>
-							<strong class="v-color font-medium">Value (V)</strong> is the actual content of web pages
-							shown. Once we matched the appropriate search term (Query) with the relevant results (Key),
-							we want to get the content (Value) of the most relevant pages.
+							<strong class="v-color font-medium">Value (V)</strong> ist der tatsächliche Inhalt der 
+							angezeigten Webseiten. Nachdem wir den passenden Suchbegriff (Query) mit den relevanten 
+							Ergebnissen (Key) abgeglichen haben, möchten wir den Inhalt (Value) der relevantesten Seiten erhalten.
 						</li>
 					</ul>
 					<p>
-						By using these QKV values, the model can calculate attention scores, which determine how
-						much focus each token should receive when generating predictions.
+						Durch die Verwendung dieser QKV-Werte kann das Modell Aufmerksamkeitswerte (attention scores) berechnen, die bestimmen, 
+						wie viel Fokus jedes Token bei der Generierung von Vorhersagen erhalten sollte.
 					</p>
 				</div>
 				<div class="article-subsection-l2">
