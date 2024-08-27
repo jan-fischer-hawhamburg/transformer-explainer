@@ -235,13 +235,13 @@
 		return d3
 			.scaleLinear()
 			.domain(qkColorScaleDomain)
-			.range(['white', theme.colors['purple'][700]])(d);
+			.range(['white', theme.colors['red'][400]])(d);
 	};
 	const maskedColorScale = (d, i) => {
-		return d3.scaleLinear().domain([-3, 3]).range(['white', theme.colors['purple'][700]])(d);
+		return d3.scaleLinear().domain([-3, 3]).range(['white', theme.colors['orange'][400]])(d);
 	};
 	const softmaxColorScale = (d, i) => {
-		return d3.interpolate('white', theme.colors['purple'][700])(d);
+		return d3.interpolate('white', theme.colors['green'][400])(d);
 	};
 </script>
 
@@ -427,8 +427,78 @@
 		</div>
 	</div>
 </div>
-
 <style lang="scss">
+.attention-matrix-container {
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.2s background-color;
+    gap: 1rem;
+    padding: 1rem;
+
+    .attention-qk,
+    .attention-mask,
+    .attention-softmax {
+        display: none;
+    }
+
+    :global(.matrix) {
+        padding: 0.5rem;
+    }
+
+    .matrix-label {
+        white-space: nowrap;
+        color: theme('colors.gray.400');
+    }
+
+    .attention-result {
+        .matrix-label:hover {
+            color: theme('colors.gray.600');
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        left: -1rem;
+        top: calc(var(--attention-matrix-width) / 2 - 0.5rem);
+        width: 1.2rem;
+        height: 1.2rem;
+        color: theme('colors.gray.300');
+    }
+
+    .attention-matrix {
+        position: relative;
+    }
+}
+
+.color-scale {
+    position: absolute;
+    bottom: -1.2rem;
+    height: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    gap: 0.2rem;
+
+    .bar {
+        height: 0.4rem;
+        flex: 1 0 0;
+        border: 1px solid theme('colors.gray.200');
+        background: linear-gradient(90deg, white 0%, theme('colors.red.400') 33%, theme('colors.orange.400') 66%, theme('colors.green.400') 100%); // Updated gradient to match new color scheme
+    }
+
+    .val {
+        flex-shrink: 0;
+        font-family: monospace;
+        font-size: 0.7rem;
+        color: theme('colors.gray.600');
+    }
+}
+</style>
+
+
+<!-- <style lang="scss">
 	.attention-matrix-container {
 		cursor: pointer;
 		border-radius: 0.5rem;
@@ -493,4 +563,4 @@
 			color: theme('colors.gray.600');
 		}
 	}
-</style>
+</style> -->
