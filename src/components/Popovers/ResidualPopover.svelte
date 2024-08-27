@@ -21,7 +21,7 @@
 	goTo="article-residual"
 >
 	<div class="residual-content">
-		Adds skip-connections to allow for better gradient flow.
+		Fügt Skip-Verbindungen hinzu, um einen besseren Gradientenfluss zu ermöglichen.
 	</div></CommonPopover
 >
 
