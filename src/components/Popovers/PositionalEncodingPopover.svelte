@@ -450,7 +450,8 @@
 	.gradient-legend {
 		width: 8px;
 		height: 100%;
-		background: linear-gradient(to top, rgb(96, 165, 250), white, rgb(248, 113, 113));
+		background: linear-gradient(to top, rgb(169, 29, 38), white, rgb(248, 113, 113)); // updated colors
+		/* background: linear-gradient(to top, rgb(96, 165, 250), white, rgb(248, 113, 113)); */
 		border: 1px solid theme('colors.gray.300');
 	}
 
