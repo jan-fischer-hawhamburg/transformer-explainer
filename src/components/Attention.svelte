@@ -22,15 +22,15 @@
 	const blockId = getContext('block-id');
 	$: isAttentionExpanded = $expandedBlock.id === blockId;
 
-	const queryVectorColor = 'bg-blue-200';
-	const keyVectorColor = 'bg-red-200';
+	const queryVectorColor = 'bg-red-200';
+	const keyVectorColor = 'bg-orange-200'; // or 'bg-rose-200' for a different shade of red
 	const valVectorColor = 'bg-green-200';
-
-	const queryHeadVectorColor = 'bg-blue-300';
-	const keyHeadVectorColor = 'bg-red-300';
-	const valHeadVectorColor = 'bg-green-300';
-
-	const outputVectorColor = 'bg-purple-300';
+	
+	const queryHeadVectorColor = 'bg-red-400';
+	const keyHeadVectorColor = 'bg-orange-400'; // or 'bg-rose-400' for a different shade of red
+	const valHeadVectorColor = 'bg-green-400';
+	
+	const outputVectorColor = 'bg-red-900';
 
 	let isHovered = false;
 
@@ -220,7 +220,7 @@
 				font-size: 0.8rem;
 			}
 			&.query .title {
-				color: theme('colors.blue.400');
+				color: theme('colors.red.400');
 			}
 			&.key .title {
 				color: theme('colors.red.400');
@@ -251,8 +251,8 @@
 				&.active {
 					&.query {
 						.label {
-							background-color: theme('colors.blue.100');
-							color: theme('colors.blue.700');
+							background-color: theme('colors.red.100');
+							color: theme('colors.red.700');
 						}
 					}
 					&.key {
@@ -269,7 +269,7 @@
 			user-select: none;
 			font-size: 0.8rem;
 			&.query {
-				color: theme('colors.blue.300');
+				color: theme('colors.red.300');
 			}
 			&.key {
 				color: theme('colors.red.300');
