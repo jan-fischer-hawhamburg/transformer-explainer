@@ -55,8 +55,8 @@
 	};
 
 	const qkvColorScale = (d, i) => {
-		#let color = i < 20 ? 'blue' : i < 40 ? 'red' : 'green';
-		#return d3.interpolate(theme.colors[color][100], theme.colors[color][400])(d);
+		//let color = i < 20 ? 'blue' : i < 40 ? 'red' : 'green';
+		//return d3.interpolate(theme.colors[color][100], theme.colors[color][400])(d);
 		let color = i < 20 ? 'red' : i < 40 ? 'red' : 'green';
     		return d3.interpolate(theme.colors[color][100], theme.colors[color][400])(d);
 	};
