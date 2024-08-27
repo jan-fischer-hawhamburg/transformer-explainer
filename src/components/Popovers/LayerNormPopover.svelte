@@ -22,6 +22,6 @@
 	goTo="article-ln"
 >
 	<div class="ln-content w-[10rem]">
-		Standardizes layer inputs to maintain consistent mean and variance.
+		Standardisiert die Layer-Eingaben (layer inputs), um Mittelwert und Varianz konsistent zu halten.
 	</div></CommonPopover
 >
