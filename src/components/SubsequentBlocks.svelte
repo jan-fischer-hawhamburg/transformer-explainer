@@ -51,7 +51,7 @@
 			{#each $tokens as token, index}
 				<div class="cell" class:last={index === $tokens.length - 1}>
 					<div
-						class={classNames(`vector shrink-0 bg-blue-200`, {
+						class={classNames(`vector shrink-0 bg-red-200`, {
 							'last-token': index === $tokens.length - 1
 						})}
 					>
@@ -99,7 +99,7 @@
 					opacity: 1;
 					.highlight {
 						transition: all 0.5s;
-						color: theme('colors.blue.500');
+						color: theme('colors.red.500');
 						font-weight: 600;
 					}
 				}
