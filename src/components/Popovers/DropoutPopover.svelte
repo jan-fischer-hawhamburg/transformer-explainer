@@ -21,5 +21,5 @@
 	{placement}
 	goTo="article-dropout"
 >
-	<div class="dropout-content">Disables randomly selected neurons.</div></CommonPopover
+	<div class="dropout-content">Deaktiviert zufällig ausgewählte Neuronen.</div></CommonPopover
 >
