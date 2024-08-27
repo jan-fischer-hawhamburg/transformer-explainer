@@ -63,7 +63,7 @@
 
 		// Initialize tokenizer
 		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
-		const tokenizer = await AutoTokenizer.from_pretrained('benjamin/gerpt2');
+		const tokenizer = await AutoTokenizer.from_pretrained('benjamin/gerpt2-large');
 
 		// Subscribe input change
 		let initialRun = true;
