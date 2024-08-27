@@ -11,9 +11,9 @@
 
 	setContext('block-id', 'mlp');
 
-	const firstLayerlColor = 'bg-purple-200';
-	const secondLayerColor = 'bg-indigo-200';
-	const outputColor = 'bg-blue-200';
+	const firstLayerlColor = 'bg-red-200';
+	const secondLayerColor = 'bg-red-50';
+	const outputColor = 'bg-red-900';
 
 	let isHovered = false;
 
@@ -95,7 +95,7 @@
 					{#each $tokens as token, index}
 						<div class="cell" class:last={index === $tokens.length - 1}>
 							<div class={`vector ${outputColor}`}>
-								<VectorCanvas colorScale="blue" />
+								<VectorCanvas colorScale="red" />
 							</div>
 						</div>
 						<Tooltip placement="right" class="popover">vector({$modelMeta.dimension})</Tooltip>
