@@ -530,9 +530,7 @@
 
 						Übersetzt und angepasst vom <a href="https://bil-hamburg.de" target="_blank">Business Innovation Lab</a> 
 						der Hochschule für Angewandte Wissenschaften Hamburg im Rahmen des <a href="https://digitalzentrum-hamburg.de/" target="_blank">
-						Mittelstand Digital-Zentrum Hamburg</a>.</p>
-				</p>
-			</div>
+						Mittelstand Digital-Zentrum Hamburg</a>.
 					</p>
 				</div>
 			</div>
