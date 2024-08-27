@@ -98,8 +98,8 @@
 
 			background: linear-gradient(
 				to right,
-				theme('colors.blue.500') 0%,
-				theme('colors.purple.500') 60%
+				theme('colors.red.100') 0%,
+				theme('colors.red.900') 60%
 			);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
