@@ -64,8 +64,8 @@
 		// Initialize tokenizer
 		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
 		//const tokenizer = await AutoTokenizer.from_pretrained('https://huggingface.co/dbmdz/german-gpt2/resolve/main/tokenizer.json');
-		console.log(`./${base}/models_gerpt2/tokenizer.json`)
-		const tokenizer = await AutoTokenizer.from_pretrained(`./${base}/models_gerpt2/tokenizer_config.json`);
+		
+		const tokenizer = await AutoTokenizer.from_pretrained(`./models_gerpt2/tokenizer.json`);
 		
 
 		// Subscribe input change
