@@ -77,7 +77,7 @@
 		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
 		//const tokenizer = await AutoTokenizer.from_pretrained('dbmdz/german-gpt2');
 		
-		const tokenizer = await loadLocalTokenizer(`${base}/model/tokenizer.json`);
+		const tokenizer = await loadTokenizerJson(`${base}/model/tokenizer.json`);
 
 		
 
