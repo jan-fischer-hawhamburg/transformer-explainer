@@ -461,33 +461,32 @@
 				</div>
 
 				<div class="article-section">
-					<h1>Interactive Features</h1>
-					<p>
-						Transformer Explainer is built to be interactive and allows you to explore the inner
-						workings of the Transformer. Here are some of the interactive features you can play
-						with:
+					<h1>Interaktive Funktionen</h1>
+					<p>	
+						Der Transformer-Explainer wurde interaktiv gestaltet und ermöglicht es Ihnen, die inneren Abläufe des Transformers
+						zu erkunden. Hier sind einige der interaktiven Funktionen, mit denen Sie experimentieren können:
 					</p>
 
 					<ul>
 						<li>
-							<strong>Input your own text sequence</strong> to see how the model processes it and predicts
-							the next word. Explore attention weights, intermediate computations, and see how the final
-							output probabilities are calculated.
+							<strong>Geben Sie Ihre eigene Textsequenz ein</strong>, um zu sehen, wie das Modell sie verarbeitet 
+							und das nächste Wort vorhersagt. Erkunden Sie die Aufmerksamkeitsgewichte / attention weights, Zwischenberechnungen und sehen Sie,
+							wie die finalen Ausgabe-Wahrscheinlichkeiten berechnet werden.
 						</li>
 						<li>
-							<strong>Use the temperature slider</strong> to control the randomness of the model’s predictions.
-							Explore how you can make the model output more deterministic or more creative by changing
-							the temperature value.
+							<strong>Verwenden Sie den Temperaturregler</strong>, um die Zufälligkeit der Vorhersagen des Modells zu steuern.
+							Erkunden Sie, wie Sie das Modell durch Änderung des Temperaturwerts deterministischer oder kreativer machen können.
 						</li>
 						<li>
-							<strong>Interact with attention maps</strong> to see how the model focuses on different
-							tokens in the input sequence. Hover over tokens to highlight their attention weights and
-							explore how the model captures context and relationships between words.
+							<strong>Interagieren Sie mit den Aufmerksamkeitskarten / attention maps</strong>, um zu sehen, wie das Modell 
+							sich auf verschiedene Tokens in der Eingabesequenz konzentriert. Bewegen Sie den Mauszeiger über Tokens, 
+							um ihre Aufmerksamkeitsgewichte / attention weights hervorzuheben, und erkunden Sie, 
+							wie das Modell Kontext und Beziehungen zwischen Wörtern erfasst.
 						</li>
 					</ul>
 				</div>
 
-				<div class="article-section">
+				<!-- <div class="article-section">
 					<h2>Video Tutorial</h2>
 					<div class="video-container">
 						<iframe
@@ -498,44 +497,39 @@
 						>
 						</iframe>
 					</div>
-				</div>
+				</div> --!>
 
 				<div class="article-section">
-					<h2>How is Transformer Explainer Implemented?</h2>
+					<h2>Wie ist der Transformer Explainer implementiert?</h2>
 					<p>
-						Transformer Explainer features a live GPT-2 (small) model running directly in the
-						browser. This model is derived from the PyTorch implementation of GPT by Andrej
-						Karpathy's
-						<a href="https://github.com/karpathy/nanoGPT" title="Github" target="_blank"
-							>nanoGPT project</a
-						>
-						and has been converted to
-						<a href="https://onnxruntime.ai/" title="ONNX" target="_blank">ONNX Runtime</a>
-						for seamless in-browser execution. The interface is built using JavaScript, with
-						<a href="https://kit.svelte.dev/" title="Svelte" target="_blank">Svelte</a>
-						as a front-end framework and
-						<a href="http://D3.js" title="D3" target="_blank">D3.js</a>
-						for creating dynamic visualizations. Numerical values are updated live following the user
-						input.
+						Der Transformer Explainer verwendet ein live laufendes GPT-2 (small) Modell direkt im Browser. 
+						Dieses Modell stammt aus der PyTorch-Implementierung von GPT durch Andrej Karpathys 
+						<a href="https://github.com/karpathy/nanoGPT" title="Github" target="_blank">nanoGPT-Projekt</a> 
+						und wurde in <a href="https://onnxruntime.ai/" title="ONNX" target="_blank">ONNX Runtime</a> umgewandelt, 
+						um eine nahtlose Ausführung im Browser zu ermöglichen. Die Benutzeroberfläche ist mit JavaScript erstellt, 
+						wobei <a href="https://kit.svelte.dev/" title="Svelte" target="_blank">Svelte</a> als Front-End-Framework und 
+						<a href="http://D3.js" title="D3" target="_blank">D3.js</a> für die Erstellung dynamischer Visualisierungen 
+						verwendet wird. Numerische Werte werden in Echtzeit basierend auf den Benutzereingaben aktualisiert.
 					</p>
 				</div>
 
 				<div class="article-section">
-					<h2>Who developed the Transformer Explainer?</h2>
+					<h2>Wer hat den Transformer Explainer entwickelt?</h2>
 					<p>
-						Transformer Explainer was created by
+						Der Transformer Explainer wurde von
 
 						<a href="https://aereeeee.github.io/" target="_blank">Aeree Cho</a>,
-						<a href="https://www.linkedin.com/in/chaeyeonggracekim/" target="_blank">Grace C. Kim</a
-						>,
+						<a href="https://www.linkedin.com/in/chaeyeonggracekim/" target="_blank">Grace C. Kim</a>,
 						<a href="https://alexkarpekov.com/" target="_blank">Alexander Karpekov</a>,
 						<a href="https://alechelbling.com/" target="_blank">Alec Helbling</a>,
 						<a href="https://zijie.wang/" target="_blank">Jay Wang</a>,
 						<a href="https://seongmin.xyz/" target="_blank">Seongmin Lee</a>,
-						<a href="https://bhoov.com/" target="_blank">Benjamin Hoover</a>, and
+						<a href="https://bhoov.com/" target="_blank">Benjamin Hoover</a> und
 						<a href="https://poloclub.github.io/polochau/" target="_blank">Polo Chau</a>
-
-						at the Georgia Institute of Technology.
+	
+						am Georgia Institute of Technology entwickelt.
+				</p>
+			</div>
 					</p>
 				</div>
 			</div>
