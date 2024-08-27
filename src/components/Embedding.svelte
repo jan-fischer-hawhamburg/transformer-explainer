@@ -220,7 +220,7 @@
 										return d3
 											.scaleDiverging()
 											.domain([0, 0.5, 1])
-											.range([theme.colors['red'][400], 'white', theme.colors['blue'][400]])(d);
+											.range([theme.colors['red'][400], 'white', theme.colors['orange'][400]])(d);
 									}}
 								/>
 							</div>
@@ -258,8 +258,125 @@
 		</div>
 	</div>
 </div>
-
 <style lang="scss">
+.embedding-bounding {
+    top: -0.5rem;
+    padding: 0.5rem 0;
+    left: 0;
+    width: calc(100% + 0.8rem);
+    height: 100%;
+}
+
+.embedding {
+    &.expanded {
+        .title,
+        .content {
+            z-index: 900;
+        }
+        .operations {
+            pointer-events: none;
+            opacity: 0.2;
+        }
+    }
+    .embedding-detail {
+        opacity: 0;
+    }
+    .title {
+        justify-content: end;
+        padding-left: 3rem;
+    }
+    .content {
+        padding-left: 2rem;
+        display: grid;
+        grid-template-columns: auto repeat(4, minmax(var(--min-column-width), 1fr));
+
+        .token-column {
+            .column {
+                padding: 0 1rem;
+
+                .cell {
+                    justify-content: flex-end;
+                    gap: 0.5rem;
+                    text-align: left;
+                }
+            }
+            .symbol {
+                font-size: 0.8rem;
+                color: theme('colors.gray.400');
+            }
+        }
+
+        .token-string {
+            width: 7rem;
+            flex-shrink: 0;
+        }
+
+        .subtitle {
+            justify-content: center;
+            align-items: end;
+            line-height: 1.3;
+        }
+        .index-val .label {
+            color: theme('colors.gray.400');
+            line-height: 1;
+            font-size: 0.7rem;
+        }
+        .index-val .val {
+            width: 4rem;
+            text-align: left;
+            font-size: 0.7rem;
+            color: theme('colors.gray.600');
+            font-family: monospace;
+        }
+
+        .token-embedding {
+            position: relative;
+            width: 11rem;
+
+            .vocab-index {
+                width: 5rem;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: center;
+                overflow: visible;
+                padding-right: 1rem;
+            }
+        }
+
+        .position-embedding {
+            .subtitle {
+                margin-left: -1rem;
+            }
+            .cell {
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            .index-val {
+                width: 2rem;
+                justify-content: start;
+            }
+        }
+
+        // Embedding vectors with the new color scheme
+        .vector {
+            &.query {
+                background-color: theme('colors.red.300'); // Red for Query
+            }
+            &.key {
+                background-color: theme('colors.orange.300'); // Orange for Key
+            }
+            &.value {
+                background-color: theme('colors.green.300'); // Green for Value
+            }
+            &.output {
+                background-color: theme('colors.red.900'); // Dark Red for Output
+            }
+        }
+    }
+}
+
+</style>
+<!-- <style lang="scss">
 	.embedding-bounding {
 		top: -0.5rem;
 		padding: 0.5rem 0;
@@ -363,4 +480,4 @@
 			}
 		}
 	}
-</style>
+</style> -->
