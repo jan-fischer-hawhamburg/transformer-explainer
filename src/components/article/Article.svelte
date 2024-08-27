@@ -486,8 +486,8 @@
 					</ul>
 				</div>
 
-				<!-- <div class="article-section">
-					<h2>Video Tutorial</h2>
+				<div class="article-section">
+					<h2>Video Anleitung</h2>
 					<div class="video-container">
 						<iframe
 							src="https://www.youtube.com/embed/ECR4oAwocjs"
@@ -497,7 +497,7 @@
 						>
 						</iframe>
 					</div>
-				</div> --!>
+				</div>
 
 				<div class="article-section">
 					<h2>Wie ist der Transformer Explainer implementiert?</h2>
@@ -526,8 +526,11 @@
 						<a href="https://seongmin.xyz/" target="_blank">Seongmin Lee</a>,
 						<a href="https://bhoov.com/" target="_blank">Benjamin Hoover</a> und
 						<a href="https://poloclub.github.io/polochau/" target="_blank">Polo Chau</a>
-	
 						am Georgia Institute of Technology entwickelt.
+
+						Übersetzt und angepasst vom <a href="https://bil-hamburg.de" target="_blank">Business Innovation Lab</a> 
+						der Hochschule für Angewandte Wissenschaften Hamburg im Rahmen des <a href="https://digitalzentrum-hamburg.de/" target="_blank">
+						Mittelstand Digital-Zentrum Hamburg</a>.</p>
 				</p>
 			</div>
 					</p>
