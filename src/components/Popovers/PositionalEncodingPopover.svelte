@@ -47,7 +47,9 @@
 	const colorScale = d3
 		.scaleLinear()
 		.domain([-1, 0, 1])
-		.range(['rgb(248, 113, 113)', 'rgb(255, 255, 255)', 'rgb(96, 165, 250)'])
+		//.range(['rgb(248, 113, 113)', 'rgb(255, 255, 255)', 'rgb(96, 165, 250)'])
+		.range(['rgb(248, 113, 113)', 'rgb(255, 255, 255)', 'rgb(169, 29, 38)']) // replace blue with dark red
+
 		.interpolate(d3.interpolateRgb);
 
 	// Function to get the gradient color using D3
@@ -187,18 +189,18 @@
 						<div class="flex items-center justify-center gap-1">
 							<span class="flex"></span>
 							{#if $hoveredCol % 2 === 0}
-								<span class="flex w-8 justify-center rounded-sm border border-blue-400">sin</span>
+								<span class="flex w-8 justify-center rounded-sm border border-red-500">sin</span>
 							{:else}
-								<span class="flex w-8 justify-center rounded-sm border border-blue-400">cos</span>
+								<span class="flex w-8 justify-center rounded-sm border border-red-500">cos</span>
 							{/if}
 							<span>(</span>
-							<span class="flex w-8 justify-center rounded-sm border border-blue-400"
+							<span class="flex w-8 justify-center rounded-sm border border-red-500"
 								>{$hoveredCol ? $hoveredCol : 'pos'}</span
 							>
 							<span>/ 10000 </span>
 							<sup
 								>(2 *
-								<span class="mr-1 rounded-sm border border-blue-400 pl-2 pr-2"
+								<span class="mr-1 rounded-sm border border-red-500 pl-2 pr-2"
 									>{$hoveredRow ? $hoveredRow : ' i '}</span
 								>
 								/ 768)</sup
@@ -206,7 +208,7 @@
 							<span>)</span>
 							<!-- <span>/ 10000 ^ ( 2 *</span>
 							<sup>superscript hrllo</sup>
-							<span class="w-8 flex justify-center border border-blue-400 rounded-sm">{$hoveredRow ? $hoveredRow : 'i'}</span>
+							<span class="w-8 flex justify-center border border-red-500 rounded-sm">{$hoveredRow ? $hoveredRow : 'i'}</span>
 							<span>/ 768 ) )</span> -->
 							<!-- <span>=</span> -->
 						</div>
