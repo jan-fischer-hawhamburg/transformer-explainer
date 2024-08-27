@@ -42,13 +42,13 @@
 	// 	}
 	// });
 
-	const colorKey = typeof colorScale === 'string' ? colorScale : 'blue';
+	const colorKey = typeof colorScale === 'string' ? colorScale : 'red';
 	const matrixColorScale =
 		typeof colorScale === 'function'
 			? colorScale
 			: d3.interpolate('white', theme.colors[colorKey][400]);
 
-	const highlightColorScale = d3.interpolate('white', theme.colors['yellow'][600]);
+	const highlightColorScale = d3.interpolate('white', theme.colors['red'][900]);
 
 	const drawMatrixSvg = () => {
 		const svg = d3.select(svgEl);
