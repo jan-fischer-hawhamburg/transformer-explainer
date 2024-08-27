@@ -251,7 +251,7 @@
 						<span class="k-color">K</span>, und
 						<span class="v-color">V</span> multipliziert wird. Hier ist eine Analogie zur Websuche, 
 						um ein intuitives Verständnis für diese Matrizen zu entwickeln:
-				</p>
+					
 					</p>
 					<ul>
 						<li>
