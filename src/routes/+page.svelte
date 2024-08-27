@@ -40,7 +40,8 @@
 		const chunkNum = 63; //TODO: move to model meta
 		const chunkUrls = Array(chunkNum)
 			.fill(0)
-			.map((d, i) => `${base}/model/gpt2.onnx.part${i}`);
+			.map((d, i) => `${base}/model/gerpt2.onnx.part${i}`);
+			//.map((d, i) => `${base}/model/gpt2.onnx.part${i}`);
 
 		// Fetch from cache
 		const mergedArray = await fetchAndMergeChunks(chunkUrls);
