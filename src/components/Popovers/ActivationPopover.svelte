@@ -19,7 +19,7 @@
 	goTo="article-activation"
 >
 	<div class="activation-content">
-		Applies activation function to neuron outputs.
+		Wendet die Aktivierungsfunktion auf die Neuronenausgänge an.
 	</div></CommonPopover
 >
 
