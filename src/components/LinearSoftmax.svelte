@@ -314,20 +314,20 @@
 					height: var(--softmax-row-height);
 
 					&.highlight {
-						color: theme('colors.purple.600');
+						color: theme('colors.red.600');
 						cursor: pointer;
 						transition: background-color 0.2s;
 					}
 
 					&.sample_highlight {
 						color: white;
-						background-color: theme('colors.purple.400');
+						background-color: theme('colors.red.400');
 					}
 
 					&.final_token_highlight {
 						color: var(--predicted-color);
 						font-weight: 600;
-						// background-color: theme('colors.blue.200');
+						// background-color: theme('colors.red.200');
 						transition: background-color 1s;
 					}
 				}
