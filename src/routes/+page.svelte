@@ -34,6 +34,15 @@
 	import { AutoTokenizer } from '@xenova/transformers';
 	import { ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
 
+	import { GPT2Tokenizer } from '@xenova/transformers';
+	import fs from 'fs';
+
+	async function loadLocalTokenizer(jsonPath) {
+	    const tokenizerData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+	    const tokenizer = new GPT2Tokenizer(tokenizerData);
+	    return tokenizer;
+	}
+
 	// run model
 	onMount(async () => {
 		// Fetch model onnx
@@ -63,9 +72,10 @@
 
 		// Initialize tokenizer
 		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
-		//const tokenizer = await AutoTokenizer.from_pretrained('https://huggingface.co/dbmdz/german-gpt2/resolve/main/tokenizer.json');
+		//const tokenizer = await AutoTokenizer.from_pretrained('dbmdz/german-gpt2');
 		
-		const tokenizer = await AutoTokenizer.from_pretrained(`./models_gerpt2/tokenizer.json`);
+		const tokenizer = await loadLocalTokenizer(`${base}/model/tokenizer.json`);
+
 		
 
 		// Subscribe input change
