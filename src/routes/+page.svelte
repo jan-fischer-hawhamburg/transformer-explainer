@@ -63,7 +63,7 @@
 
 		// Initialize tokenizer
 		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
-		const tokenizer = await AutoTokenizer.from_pretrained('benjamin/gerpt2-large');
+		const tokenizer = await AutoTokenizer.from_pretrained('dbmdz/german-gpt2');
 
 		// Subscribe input change
 		let initialRun = true;
