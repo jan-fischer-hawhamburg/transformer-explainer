@@ -31,20 +31,20 @@
 	import { fetchAndMergeChunks } from '~/utils/fetchChunks';
 	import WeightPopovers from '~/components/WeightPopovers.svelte';
 	import { fade } from 'svelte/transition';
-	import { AutoTokenizer } from '@xenova/transformers';
+	 // import { AutoTokenizer } from '@xenova/transformers';
 	import { ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
 
-	import { GPT2Tokenizer } from '@xenova/transformers';
-	import fs from 'fs';
+	// import { GPT2Tokenizer } from '@xenova/transformers';
+	// import fs from 'fs';
 
 	// Function to load the tokenizer.json file
-	async function loadTokenizerJson(url) {
-	    const response = await fetch(url);
-	    if (!response.ok) {
-	        throw new Error(`Failed to load ${url}: ${response.statusText}`);
-	    }
-	    return response.json();
-	}
+	// async function loadTokenizerJson(url) {
+	//     const response = await fetch(url);
+	//     if (!response.ok) {
+	//         throw new Error(`Failed to load ${url}: ${response.statusText}`);
+	//     }
+	//     return response.json();
+	// }
 
 	// run model
 	onMount(async () => {
@@ -77,7 +77,7 @@
 		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
 		//const tokenizer = await AutoTokenizer.from_pretrained('dbmdz/german-gpt2');
 		
-		const tokenizer = await loadTokenizerJson(`${base}/models_gerpt2/tokenizer.json`);
+		const tokenizer = await Tokenizer.fromFile(`${base}/models_gerpt2/tokenizer.json`);
 
 		
 
