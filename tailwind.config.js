@@ -18,18 +18,18 @@ export default {
 			},
 			fontSize: {},
 			colors: {
-				cyan: {
-					50: '#ecfeff',
-					100: '#cffafe',
-					200: '#a5f3fc',
-					300: '#67e8f9',
-					400: '#22d3ee',
-					500: '#06b6d4',
-					600: '#0891b2',
-					700: '#0e7490',
-					800: '#155e75',
-					900: '#164e63',
-					950: '#083344'
+				red: {
+					50: '#ffe5e7',   // Very light red
+					100: '#ffccd0',  // Light red
+					200: '#ff99a1',  // Soft red
+					300: '#ff6671',  // Moderate red
+					400: '#ff3342',  // Bright red
+					500: '#ff0012',  // Vivid red
+					600: '#cc0010',  // Darker red
+					700: '#a91d26',  // Base dark red (your specified color)
+					800: '#80000b',  // Deeper red
+					900: '#4d0006',  // Darkest red
+					950: '#260003'   // Near black with a red tint
 				}
 			}
 		}
