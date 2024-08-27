@@ -348,110 +348,114 @@
 				</div>
 
 				<div class="architecture-section" id="article-prob">
-					<h2>Output Probabilities</h2>
+					<h2>Ausgabe-Wahrscheinlichkeiten / Output Probabilities</h2>
 					<p>
-						After the input has been processed through all Transformer blocks, the output is passed
-						through the final linear layer to prepare it for token prediction. This layer projects
-						the final representations into a <code>50,257</code>
-						dimensional space, where every token in the vocabulary has a corresponding value called
-						<code>logit</code>. Any token can be the next word, so this process allows us to simply
-						rank these tokens by their likelihood of being that next word. We then apply the softmax
-						function to convert the logits into a probability distribution that sums to one. This
-						will allow us to sample the next token based on its likelihood.
+						Nachdem die Eingabe durch alle Transformer-Blöcke verarbeitet wurde, wird die Ausgabe durch die 
+						abschließende lineare Schicht geleitet, um sie für die Token-Vorhersage vorzubereiten. Diese Schicht projiziert 
+						die endgültigen Repräsentationen in einen <code>50.257</code>-dimensionalen Raum, in dem jedes Token im Vokabular 
+						einen entsprechenden Wert namens <code>Logit</code> hat. Da jedes Token das nächste Wort sein kann, 
+						ermöglicht uns dieser Prozess, diese Tokens einfach nach ihrer Wahrscheinlichkeit, das nächste Wort zu sein, 
+						zu ordnen. Anschließend wenden wir die Softmax-Funktion an, um die Logits in eine Wahrscheinlichkeitsverteilung 
+						umzuwandeln, die sich auf eins summiert. Dadurch können wir das nächste Token basierend auf 
+						seiner Wahrscheinlichkeit auswählen.
 					</p>
 
 					<div class="figure">
 						<img src="./article_assets/softmax.png" width="60%" align="middle" />
 					</div>
 					<div class="figure-caption">
-						Figure <span class="attention">5</span>. Each token in the vocabulary is assigned a
-						probability based on the model's output logits. These probabilities determine the
-						likelihood of each token being the next word in the sequence.
+						Abbildung <span class="attention">5</span>. Jedem Token im Vokabular wird basierend auf den Logits 
+						des Modells eine Wahrscheinlichkeit zugewiesen. Diese Wahrscheinlichkeiten bestimmen die Wahrscheinlichkeit,
+						dass jedes Token das nächste Wort in der Sequenz wird.
 					</div>
 
 					<p id="article-temperature">
-						The final step is to generate the next token by sampling from this distribution The <code
-							>temperature</code
-						>
-						hyperparameter plays a critical role in this process. Mathematically speaking, it is a very
-						simple operation: model output logits are simply divided by the
-						<code>temperature</code>:
+
+						Der letzte Schritt besteht darin, das nächste Token zu generieren, indem aus dieser Verteilung eine Auswahl 
+						getroffen wird. Der <code>Temperatur</code>-Hyperparameter spielt in diesem Prozess eine entscheidende Rolle. 
+						Mathematisch gesehen ist dies ein sehr einfacher Vorgang: Die Logits des Modellausgangs werden einfach durch 
+						die <code>Temperatur</code> dividiert:
+
 					</p>
 
 					<ul>
 						<li>
-							<code>temperature = 1</code>: Dividing logits by one has no effect on the softmax
-							outputs.
+							<code>Temperatur = 1</code>: Die Division der Logits durch eins hat keine Auswirkung auf die Softmax-Ausgaben.
 						</li>
 						<li>
-							<code>temperature &lt; 1</code>: Lower temperature makes the model more confident and
-							deterministic by sharpening the probability distribution, leading to more predictable
-							outputs.
+							<code>Temperatur &lt; 1</code>: Eine niedrigere Temperatur macht das Modell selbstbewusster und deterministischer, 
+							indem sie die Wahrscheinlichkeitsverteilung schärft, was zu vorhersehbareren Ausgaben führt.
 						</li>
 						<li>
-							<code>temperature &gt; 1</code>: Higher temperature creates a softer probability
-							distribution, allowing for more randomness in the generated text – what some refer to
-							as model <em>“creativity”</em>.
+							<code>Temperatur &gt; 1</code>: Eine höhere Temperatur erzeugt eine weichere Wahrscheinlichkeitsverteilung, 
+							was mehr Zufälligkeit im generierten Text zulässt – was manche als <em>„Kreativität“</em> des Modells bezeichnen.
 						</li>
 					</ul>
 
+
 					<p>
-						Adjust the temperature and see how you can balance between deterministic and diverse
-						outputs!
+						Stellen Sie die Temperatur ein und sehen Sie, wie Sie das Gleichgewicht zwischen deterministischen und 
+						„kreativen“ Ausgaben finden können!
+
 					</p>
 				</div>
 
 				<div class="architecture-section">
-					<h2>Advanced Architectural Features</h2>
+					<h2>Erweiterte Architekturmerkmale</h2>
 
 					<p>
-						There are several advanced architectural features that enhance the performance of
-						Transformer models. While important for the model's overall performance, they are not as
-						important for understanding the core concepts of the architecture. Layer Normalization,
-						Dropout, and Residual Connections are crucial components in Transformer models,
-						particularly during the training phase. Layer Normalization stabilizes training and
-						helps the model converge faster. Dropout prevents overfitting by randomly deactivating
-						neurons. Residual Connections allows gradients to flow directly through the network and
-						helps to prevent the vanishing gradient problem.
+						Es gibt mehrere erweiterte Architekturmerkmale, die die Leistung von Transformer-Modellen verbessern. 
+						Obwohl sie für die Gesamtleistung des Modells wichtig sind, sind sie nicht so entscheidend für das Verständnis 
+						der Kernkonzepte der Architektur. Layer-Normalisierung, Dropout und Residualverbindungen sind entscheidende 
+						Komponenten in Transformer-Modellen, insbesondere während der Trainingsphase. 
+						Die Layer-Normalisierung stabilisiert das Training und hilft dem Modell, schneller zu konvergieren. 
+						Dropout verhindert "overfitting", also das Phänomen, bei dem ein Modell die Trainingsdaten zu genau lernt und 
+						dadurch auf neuen, ungesehenen Daten schlecht generalisiert, indem es zufällig Neuronen deaktiviert. 
+						Residualverbindungen ermöglichen es den Gradienten, die mathematischen Größen, 
+						die zur Anpassung der Modellparamter dienen, direkt durch das Netzwerk zu fließen und verhindern somit das Problem, 
+						dass sie in tiefen Schichten zu klein werden, was das Lernen behindern würde.
+
+						
 					</p>
 					<div class="article-subsection" id="article-ln">
-						<h3>Layer Normalization</h3>
+						<h3>Layer-Normalisierung</h3>
 
 						<p>
-							Layer Normalization helps to stabilize the training process and improves convergence.
-							It works by normalizing the inputs across the features, ensuring that the mean and
-							variance of the activations are consistent. This normalization helps mitigate issues
-							related to internal covariate shift, allowing the model to learn more effectively and
-							reducing the sensitivity to the initial weights. Layer Normalization is applied twice
-							in each Transformer block, once before the self-attention mechanism and once before
-							the MLP layer.
+							Die Layer-Normalisierung hilft, den Trainingsprozess zu stabilisieren und die Konvergenz zu verbessern. 
+							Sie funktioniert, indem sie die Eingaben über die Merkmale hinweg normalisiert und sicherstellt, 
+							dass der Mittelwert und die Varianz der Aktivierungen konsistent sind. Diese Normalisierung hilft, 
+							Probleme im Zusammenhang mit dem internen Kovariaten-Shift zu mindern, wodurch das Modell effektiver lernen 
+							kann und weniger empfindlich auf die anfänglichen Gewichte / Parametrisierung reagiert. 
+							Die Layer-Normalisierung wird in jedem Transformer-Block zweimal angewendet: einmal vor dem 
+							Selbstaufmerksamkeitsmechanismus / self-attention mechanism und einmal vor der MLP-Schicht.
+
 						</p>
 					</div>
 					<div class="article-subsection" id="article-dropout">
 						<h3>Dropout</h3>
 
 						<p>
-							Dropout is a regularization technique used to prevent overfitting in neural networks
-							by randomly setting a fraction of model weights to zero during training. This
-							encourages the model to learn more robust features and reduces dependency on specific
-							neurons, helping the network generalize better to new, unseen data. During model
-							inference, dropout is deactivated. This essentially means that we are using an
-							ensemble of the trained subnetworks, which leads to a better model performance.
+							Dropout ist eine Regularisierungstechnik, die eingesetzt wird, um Overfitting in neuronalen Netzen zu verhindern, 
+							indem während des Trainings zufällig ein Teil der Modellgewichte auf null gesetzt wird. 
+							Dies zwingt das Modell, robustere Merkmale zu lernen und verringert die Abhängigkeit von bestimmten Neuronen, 
+							wodurch das Netzwerk besser auf neue, ungesehene Daten generalisieren kann. Während der Modellinferenz 
+							wird Dropout deaktiviert, was im Wesentlichen bedeutet, dass wir ein Ensemble der trainierten Unternetze 
+							verwenden, was zu einer besseren Modellleistung führt.
 						</p>
 					</div>
 					<div class="article-subsection" id="article-residual">
-						<h3>Residual Connections</h3>
+						<h3>Residualverbindungen</h3>
 
 						<p>
-							Residual connections were first introduced in the ResNet model in 2015. This
-							architectural innovation revolutionized deep learning by enabling the training of very
-							deep neural networks. Essentially, residual connections are shortcuts that bypass one
-							or more layers, adding the input of a layer to its output. This helps mitigate the
-							vanishing gradient problem, making it easier to train deep networks with multiple
-							Transformer blocks stacked on top of each other. In GPT-2, residual connections are
-							used twice within each Transformer block: once before the MLP and once after, ensuring
-							that gradients flow more easily, and earlier layers receive sufficient updates during
-							backpropagation.
+							Residualverbindungen wurden erstmals 2015 im ResNet-Modell eingeführt und stellten eine 
+							bahnbrechende Innovation im Deep-Learning dar, da sie das Training sehr tiefer neuronaler Netze ermöglichten.
+							Im Wesentlichen sind Residualverbindungen Abkürzungen, die eine oder mehrere Schichten umgehen, 
+							indem sie die Eingabe einer Schicht zu deren Ausgabe hinzufügen. Dies trägt dazu bei, 
+							das Problem des verschwindenden / vanishing Gradienten zu mildern, wodurch es einfacher wird, 
+							tiefe Netzwerke mit mehreren übereinander gestapelten Transformer-Blöcken zu trainieren. 
+							In GPT-2 werden Residualverbindungen in jedem Transformer-Block zweimal verwendet: einmal vor der MLP-Schicht
+							und einmal danach, um sicherzustellen, dass die Gradienten leichter fließen und die früheren Schichten 
+							während der Backpropagation ausreichend aktualisiert werden.
 						</p>
 					</div>
 				</div>
