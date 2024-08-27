@@ -18,7 +18,7 @@
 	let percentPrecision = 2;
 
 	let normalColor = theme.colors.gray[300];
-	let hoverColor = theme.colors.purple[400];
+	let hoverColor = theme.colors.red[900];
 
 	export let drawBars = () => {
 		const data = $modelData?.prediction;
