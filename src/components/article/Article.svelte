@@ -313,7 +313,7 @@
 					<h4>Schritt 3: Ausgabe / Output</h4>
 					<p>
 						Das Modell verwendet die maskierten Selbstaufmerksamkeitswerte / masked self-attention und multipliziert sie mit 
-						der <span class="v-color">Value</span>-Matrix, um die <span class="purple-color">fianle Ausgabe</span> 
+						der <span class="v-color">Value</span>-Matrix, um die <span class="purple-color">finale Ausgabe</span> 
 						des Selbstaufmerksamkeitsmechanismus zu erhalten. GPT-2 verfügt über <code>12</code> Selbstaufmerksamkeitsköpfe / self-attention heads, 
 						die jeweils unterschiedliche Beziehungen zwischen den Tokens erfassen. Die Ausgaben dieser Köpfe werden 
 						zusammengeführt und durch eine lineare Projektion weiterverarbeitet.
