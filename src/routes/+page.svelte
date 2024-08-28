@@ -33,9 +33,9 @@
 	import { fade } from 'svelte/transition';
 	 // import { AutoTokenizer } from '@xenova/transformers';
 	import { ChevronDoubleRightOutline } from 'flowbite-svelte-icons';
-	import { Tokenizer } from "tokenizers";
-	// import { GPT2Tokenizer } from '@xenova/transformers';
-	// import fs from 'fs';
+
+	import { GPT2Tokenizer } from '@xenova/transformers';
+	
 
 	
 	
