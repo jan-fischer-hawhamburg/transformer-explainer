@@ -37,14 +37,16 @@
 	// import { GPT2Tokenizer } from '@xenova/transformers';
 	// import fs from 'fs';
 
-	// Function to load the tokenizer.json file
-	// async function loadTokenizerJson(url) {
-	//     const response = await fetch(url);
-	//     if (!response.ok) {
-	//         throw new Error(`Failed to load ${url}: ${response.statusText}`);
-	//     }
-	//     return response.json();
-	// }
+	
+	
+	// Function to load the tokenizer json files
+	async function loadFile(url) {
+	    const response = await fetch(url);
+	    if (!response.ok) {
+	        throw new Error(`Failed to load ${url}: ${response.statusText}`);
+	    }
+	    return response.json();
+	}
 
 	// run model
 	onMount(async () => {
@@ -73,11 +75,11 @@
 
 		isFetchingModel.set(false);
 
-		// Initialize tokenizer
-		//const tokenizer = await AutoTokenizer.from_pretrained('Xenova/gpt2');
-		//const tokenizer = await AutoTokenizer.from_pretrained('dbmdz/german-gpt2');
-		
-		const tokenizer = await Tokenizer.fromFile(`${base}/models_gerpt2/tokenizer.json`);
+		// load json files 
+		const tokenizer_json = await loadFile(`./models_gerpt2/tokenizer.json`);
+		const tokenizer_config = await loadFile(`./models_gerpt2/tokenizer_config.json`);
+
+		const tokenizer = new GPT2Tokenizer(tokenizer_json, tokenizer_config);
 
 		
 
